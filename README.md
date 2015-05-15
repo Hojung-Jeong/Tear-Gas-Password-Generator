@@ -13,5 +13,10 @@ Run the command below in case of Unix-based systems
 >from tear_gas import shell    
 >print ( shell.throw_it() )
 
+or it is possible to set the password length. Default value is 20
+>from tear_gas import shell    
+>print ( shell.throw_it(32) )
+
+
 #License
 Apache License
