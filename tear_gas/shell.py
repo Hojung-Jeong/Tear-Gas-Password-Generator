@@ -4,18 +4,18 @@ from tear_gas.propellant import propellant
 
 
 def throw_it(password_length=20):
-	ascii_buffer=33
-
-	base=[propellant()%93 for num in range(password_length)]
 	holder=[]
 
-	for element in base:
-		decider=(propellant()*propellant())%2
+	while True:
+		raw=propellant()%123
 
-		if decider is 0:
-			holder.append(chr(element+33))
-		else:
-			holder.append(element%10)
-
-	joined=''.join(map(str, holder))
-	return joined
+		if raw>47 and raw<58:
+			holder.append(chr(raw))
+		elif raw>64 and raw<91:
+			holder.append(chr(raw))
+		elif raw>96 and raw<123:
+			holder.append(chr(raw))
+		
+		if len(holder)==password_length:
+			joined=''.join(holder)
+			return joined
