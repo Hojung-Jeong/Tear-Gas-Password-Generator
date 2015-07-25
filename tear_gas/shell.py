@@ -1,13 +1,13 @@
 import random
 
-from tear_gas.propellant import propellant
+from tear_gas.TRNG import trng
 
 
-def throw_it(password_length=20):
+def throw_it(password_length = 20):
 	holder=[]
 
 	while True:
-		raw=propellant()%123
+		raw=trng()%123
 
 		if raw>47 and raw<58:
 			holder.append(chr(raw))

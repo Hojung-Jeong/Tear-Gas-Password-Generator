@@ -1,13 +1,22 @@
+
+'''
+List of functions:
+	
+	1. trng()             -              A true random number generator utilising data corruption. Data corruption occurs
+	                                           in number.num file (specified in variable num_gen).
+
+
+                       ---If you want to compile this script,                       
+                       		***This file MUST be compiled in speical way to ensure right behaviour!!!***
+                        	***That special way is providing an environment guaranteeing thread racing***
+
+'''
+
 from threading import Thread
 
 
-
-#True random number generator core engine =========================================
-
 def generate():
-
-	num_gen='tear_gas/number.num'
-
+	num_gen = 'tear_gas/number.num'
 
 	def zero():
 		with open (num_gen, 'a') as opener:
@@ -48,9 +57,6 @@ def generate():
 	def nine():
 		with open (num_gen, 'a') as opener:
 			opener.write('9')
-
-	#-------------------------------
-
 
 	def first():
 		thread_1=Thread(target=one)
@@ -142,8 +148,6 @@ def generate():
 		thread_7.start()
 		thread_8.start()
 
-	#-------------------------------
-
 	def thread_set():
 		thread_1=Thread(target=first)
 		thread_2=Thread(target=second)
@@ -156,15 +160,10 @@ def generate():
 		thread_4.start()
 		thread_5.start()
 
-
-	ithread_1=Thread(target=thread_set)
-	ithread_2=Thread(target=thread_set)
+	ithread_1=Thread(target = thread_set)
+	ithread_2=Thread(target = thread_set)
 	ithread_1.start()
 	ithread_2.start()
-
-
-	#-------------------------------
-
 
 	reader=open(num_gen, 'r').read()
 
@@ -173,19 +172,9 @@ def generate():
 
 	return int(reader)
 
+#---------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-#Screening null value =============================================================
-
-def propellant():
+def trng():
 	while  True:
 		try:
 			return generate()
