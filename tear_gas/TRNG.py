@@ -160,8 +160,8 @@ def generate():
 		thread_4.start()
 		thread_5.start()
 
-	ithread_1=Thread(target = thread_set)
-	ithread_2=Thread(target = thread_set)
+	ithread_1=Thread(target=thread_set)
+	ithread_2=Thread(target=thread_set)
 	ithread_1.start()
 	ithread_2.start()
 
