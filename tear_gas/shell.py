@@ -3,7 +3,7 @@ import random
 from tear_gas.TRNG import trng
 
 
-def throw_it(password_length = 20):
+def throw_it(password_length=20):
 	holder=[]
 
 	while True:
