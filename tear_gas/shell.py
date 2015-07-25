@@ -9,11 +9,7 @@ def throw_it(password_length=20):
 	while True:
 		raw=trng()%123
 
-		if raw>47 and raw<58:
-			holder.append(chr(raw))
-		elif raw>64 and raw<91:
-			holder.append(chr(raw))
-		elif raw>96 and raw<123:
+		if raw>=33 and raw<127:
 			holder.append(chr(raw))
 		
 		if len(holder)==password_length:
