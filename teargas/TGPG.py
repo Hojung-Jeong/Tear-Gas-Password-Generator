@@ -3,7 +3,7 @@ import random
 from tear_gas.TRNG import trng
 
 
-def passgen(password_length=20):
+def tgpg(password_length=20):
 	holder=[]
 
 	while True:
